@@ -11,7 +11,7 @@ jobs:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Node and Cache
+      - name: ⏳ Checkout Node and Cache
         uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -19,12 +19,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: subdir/package-lock.json
 
-      - name: Install and Build
+      - name: ✨ Install and Build
         run: |
           npm ci
+          npm run lint
           npm run build
 
-      - name: Deploy 🚀
+      - name: 🚀 Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
