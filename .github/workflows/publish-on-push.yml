@@ -7,15 +7,17 @@ permissions:
   contents: write
 jobs:
   build-and-deploy:
-    # Recommended to make multiple deployments in quick succession.
+    # Recommended to make multiple deployments in quick succession:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout Node and Cache
         uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
+          cache-dependency-path: subdir/package-lock.json
 
       - name: Install and Build
         run: |
