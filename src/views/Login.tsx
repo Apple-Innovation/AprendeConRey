@@ -49,8 +49,10 @@ export function Login() {
               </Label>
             </div>
             <div className="flex justify-center">
-              <Button className="bg-orange-400 px-10 shadow-lg border-4 border-white -skew-y-2">
-                {}
+              <Button
+                className="bg-orange-400 px-10 shadow-lg border-4 border-white outline outline-1 outline-gray-200"
+                style={{ transform: "perspective(300px) rotateY(-30deg)" }}
+              >
                 {t("nsLoginRegister.login.enter")}
               </Button>
             </div>
