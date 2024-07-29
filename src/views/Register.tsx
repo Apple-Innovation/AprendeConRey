@@ -8,12 +8,11 @@ import {
 } from "@/components/Card";
 import { Input } from "@/components/Input";
 import { Label } from "@/components/Label";
-import { Switch } from "@/components/Switch";
-import { SIGNUP } from "@/router/routes";
+import { LOGIN } from "@/router/routes";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Register() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -21,7 +20,7 @@ export function Login() {
     <Card className="w-fit border-none bg-gray-100 ">
       <CardHeader className="bg-blue-400 rounded-t-md">
         <CardTitle className="text-center text-gray-50">
-          {t("nsLoginRegister.login.title")}
+          {t("nsLoginRegister.register.title")}
         </CardTitle>
       </CardHeader>
       <CardContent className="py-6">
@@ -29,49 +28,53 @@ export function Login() {
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name" className="text-gray-800">
-                {t("nsLoginRegister.login.username")}
+                {t("nsLoginRegister.register.username")}
               </Label>
               <Input
                 id="name"
-                placeholder={t("nsLoginRegister.login.usernamePlaceholder")}
+                placeholder={t("nsLoginRegister.register.usernamePlaceholder")}
                 className="min-w-80"
               />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name" className="text-gray-800">
-                {t("nsLoginRegister.login.password")}
+              <Label htmlFor="password" className="text-gray-800">
+                {t("nsLoginRegister.register.password")}
               </Label>
               <Input
-                id="name"
-                placeholder={t("nsLoginRegister.login.passwordPlaceholder")}
+                type="password"
+                id="password"
+                placeholder={t("nsLoginRegister.register.passwordPlaceholder")}
               />
             </div>
-            <div className="flex items-center space-x-2">
-              <Switch id="remember-me" defaultChecked />
-              <Label htmlFor="remember-me">
-                {t("nsLoginRegister.login.rememberMe")}
+            <div className="flex flex-col space-y-1.5">
+              <Label htmlFor="confirmPassword" className="text-gray-800">
+                {t("nsLoginRegister.register.confirmPassword")}
               </Label>
+              <Input
+                type="password"
+                id="confirmPassword"
+                placeholder={t(
+                  "nsLoginRegister.register.confirmPasswordPlaceholder"
+                )}
+              />
             </div>
             <div className="flex justify-center">
               <Button
                 className="bg-orange-400 px-10 shadow-lg border-4 border-white outline outline-1 outline-gray-200"
                 style={{ transform: "perspective(300px) rotateY(-30deg)" }}
               >
-                {t("nsLoginRegister.login.enter")}
+                {t("nsLoginRegister.register.register")}
               </Button>
             </div>
           </div>
         </form>
       </CardContent>
       <CardFooter className="flex flex-col gap-4 justify-center">
-        <p className="text-blue-400">
-          {t("nsLoginRegister.login.forgotPassword")}
-        </p>
         <Button
           className="bg-blue-400 text-gray-50"
-          onClick={() => navigate(SIGNUP)}
+          onClick={() => navigate(LOGIN)}
         >
-          {t("nsLoginRegister.login.register")}
+          {t("nsLoginRegister.register.login")}
         </Button>
       </CardFooter>
     </Card>

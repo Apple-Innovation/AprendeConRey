@@ -11,6 +11,19 @@
       "enter": "Entrar",
       "forgotPassword": "¿Has olvidado tu contraseña?",
       "register": "¿Aún no tienes cuenta? Regístrate aquí"
+    },
+    "register": {
+      "title": "Registrarse",
+      "username": "Nombre de usuario",
+      "usernamePlaceholder": "Escribe tu nombre de usuario",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "Escribe tu correo electrónico",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Escribe tu contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "Confirma tu contraseña",
+      "register": "Registrarse",
+      "login": "¿Ya tienes cuenta? Inicia sesión aquí"
     }
   }
 }
