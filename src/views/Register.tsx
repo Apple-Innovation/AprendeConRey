@@ -18,7 +18,7 @@ export function Register() {
 
   return (
     <Card className="w-fit border-none bg-gray-100 ">
-      <CardHeader className="bg-blue-400 rounded-t-md">
+      <CardHeader className="dark:bg-slate-950 bg-blue-400 rounded-t-md">
         <CardTitle className="text-center text-gray-50">
           {t("nsLoginRegister.register.title")}
         </CardTitle>
@@ -27,12 +27,14 @@ export function Register() {
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name" className="text-gray-800">
-                {t("nsLoginRegister.register.username")}
+              <Label htmlFor="email" className="text-gray-800">
+                {t("nsLoginRegister.register.email")}
               </Label>
               <Input
-                id="name"
-                placeholder={t("nsLoginRegister.register.usernamePlaceholder")}
+                type="email"
+                id="email"
+                autoComplete="email"
+                placeholder={t("nsLoginRegister.register.emailPlaceholder")}
                 className="min-w-80"
               />
             </div>
@@ -43,6 +45,7 @@ export function Register() {
               <Input
                 type="password"
                 id="password"
+                autoComplete="new-password"
                 placeholder={t("nsLoginRegister.register.passwordPlaceholder")}
               />
             </div>
@@ -53,6 +56,7 @@ export function Register() {
               <Input
                 type="password"
                 id="confirmPassword"
+                autoComplete="new-password"
                 placeholder={t(
                   "nsLoginRegister.register.confirmPasswordPlaceholder"
                 )}

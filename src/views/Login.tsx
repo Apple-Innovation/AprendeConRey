@@ -19,7 +19,7 @@ export function Login() {
 
   return (
     <Card className="w-fit border-none bg-gray-100 ">
-      <CardHeader className="bg-blue-400 rounded-t-md">
+      <CardHeader className="dark:bg-slate-950 bg-blue-400 rounded-t-md">
         <CardTitle className="text-center text-gray-50">
           {t("nsLoginRegister.login.title")}
         </CardTitle>
@@ -32,17 +32,21 @@ export function Login() {
                 {t("nsLoginRegister.login.username")}
               </Label>
               <Input
+                type="text"
                 id="name"
+                autoComplete="username"
                 placeholder={t("nsLoginRegister.login.usernamePlaceholder")}
                 className="min-w-80"
               />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name" className="text-gray-800">
+              <Label htmlFor="password" className="text-gray-800">
                 {t("nsLoginRegister.login.password")}
               </Label>
               <Input
-                id="name"
+                type="password"
+                id="password"
+                autoComplete="current-password"
                 placeholder={t("nsLoginRegister.login.passwordPlaceholder")}
               />
             </div>
