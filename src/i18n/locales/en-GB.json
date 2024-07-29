@@ -1,12 +1,5 @@
 {
   "nsLoginRegister": {
-    "login": {
-      "title": "Login",
-      "email": "Correo electrónico",
-      "password": "Contraseña",
-      "button": "Login",
-      "forgotPassword": "¿Olvidaste tu contraseña?",
-      "register": "Registrarse"
-    }
+    "login": {}
   }
 }
