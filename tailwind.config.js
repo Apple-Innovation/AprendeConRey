@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "tile-pattern-light": `url('/AprendeConRey/src/assets/backgroundTile.png?t=1722228234571')`,
-        "tile-pattern-dark": `url('/AprendeConRey/src/assets/darkBackgroundTile.png?t=1722286324108')`,
+        "tile-pattern-light": `url('/src/assets/backgroundTile.png')`,
+        "tile-pattern-dark": `url('/src/assets/darkBackgroundTile.png')`,
       },
     },
   },
