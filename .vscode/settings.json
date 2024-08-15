@@ -3,10 +3,10 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
-    "source.organizeImports.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "css.validate": false,
+  "css.validate": false
 }
