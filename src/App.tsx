@@ -1,22 +1,19 @@
 import "./i18n/config";
 import React from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { LOGIN } from "./router/routes";
+import { Outlet } from "react-router-dom";
+import { Spinner } from "./components/Spinner";
 
 function App() {
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
-
-  React.useEffect(() => {
-    if (pathname === "/") {
-      return navigate(LOGIN);
-    }
-  }, [pathname, navigate]);
-
   return (
-    <div className="h-dvh w-full flex justify-center items-center dark:bg-tile-pattern-dark bg-tile-pattern-light">
+    <React.Suspense
+      fallback={
+        <div className="h-dvh w-full flex justify-center items-center">
+          <Spinner className="dark:text-gray-100 text-orange-500" size={64} />
+        </div>
+      }
+    >
       <Outlet />
-    </div>
+    </React.Suspense>
   );
 }
 
