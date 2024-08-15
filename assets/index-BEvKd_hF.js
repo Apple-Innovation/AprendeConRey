@@ -1,0 +1,1 @@
+import{a as t,j as r}from"./index-CfpVBV_M.js";function i(){const e=t(s=>s.user);return r.jsxs("div",{className:"h-dvh w-full dark:text-gray-200 dark:bg-tile-pattern-dark bg-tile-pattern-light",children:["Dashboard",r.jsx("pre",{className:"flex justify-center pt-40",children:JSON.stringify(e,null,2)})]})}export{i as Dashboard};
