@@ -1,2 +1,6 @@
-export const LOGIN = "/login";
-export const SIGNUP = "/sign-up";
+export const ROUTES = {
+  ROOT: "/",
+  LOGIN: "/login",
+  SIGNUP: "/sign-up",
+  DASHBOARD: "/dashboard",
+};
