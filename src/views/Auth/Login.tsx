@@ -11,7 +11,6 @@ import { Label } from "@/components/Label";
 import { Switch } from "@/components/Switch";
 import { ROUTES } from "@/router/routes";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -41,21 +40,15 @@ export function Login() {
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(loginSchema),
   });
-  const { updateUser, login, userAuth } = useSessionStore((state) => ({
+  const { updateUser, login } = useSessionStore((state) => ({
     updateUser: state.updateUser,
     login: state.login,
-    userAuth: state.user.auth,
   }));
   const onSubmit: SubmitHandler<LoginSchema> = async (data) => {
     updateUser(data);
     login(data);
+    navigate(ROUTES.DASHBOARD, { replace: true });
   };
-
-  React.useEffect(() => {
-    if (userAuth) {
-      navigate(ROUTES.DASHBOARD, { replace: true });
-    }
-  }, [userAuth, navigate]);
 
   return (
     <Card className="w-fit border-none bg-gray-100 ">

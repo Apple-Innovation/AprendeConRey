@@ -9,7 +9,6 @@ import {
 } from "@/components/Card";
 import { ROUTES } from "@/router/routes";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -49,19 +48,11 @@ export function SignUp() {
     defaultValues: { email: "", password: "", confirmPassword: "" },
     resolver: zodResolver(signUpSchema),
   });
-  const { signup, userAuth } = useSessionStore((state) => ({
-    signup: state.signup,
-    userAuth: state.user.auth,
-  }));
+  const signup = useSessionStore((state) => state.signup);
   const onSubmit: SubmitHandler<SignupSchema> = async (data) => {
     signup(data);
+    navigate(ROUTES.DASHBOARD, { replace: true });
   };
-
-  React.useEffect(() => {
-    if (userAuth) {
-      navigate(ROUTES.DASHBOARD, { replace: true });
-    }
-  }, [userAuth, navigate]);
 
   return (
     <Card className="w-fit border-none bg-gray-100 ">
@@ -117,13 +108,7 @@ export function SignUp() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col gap-4 justify-center">
-        <Button
-          className="bg-blue-400 text-gray-50"
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(ROUTES.ROOT, { replace: true });
-          }}
-        >
+        <Button type="submit" className="bg-blue-400 text-gray-50">
           {t("nsLoginRegister.register.login")}
         </Button>
       </CardFooter>

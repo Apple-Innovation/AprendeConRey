@@ -8,6 +8,6 @@ export function PrivateRoutes() {
   return isAuthenticated ? (
     <Outlet />
   ) : (
-    <Navigate to="/" state={{ from: location }} />
+    <Navigate to="/" state={{ from: location }} replace />
   );
 }
