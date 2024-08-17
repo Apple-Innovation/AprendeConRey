@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        fredoka: ["Fredoka One"],
+      },
       fontSize: {
         xxs: "0.625rem",
       },
