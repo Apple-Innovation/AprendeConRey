@@ -1,0 +1,1 @@
+import{j as e,d as t,S as s,O as a}from"./index-KTp74jdN.js";function n(){return e.jsx("div",{className:"h-dvh w-full flex justify-center items-center dark:bg-tile-pattern-dark bg-tile-pattern-light",children:e.jsx(t.Suspense,{fallback:e.jsx(s,{className:"dark:text-gray-100 text-orange-500",size:64}),children:e.jsx(a,{})})})}export{n as Auth};
