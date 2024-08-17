@@ -15,6 +15,7 @@ type Action = {
   updateUser: (newState: LoginSchema) => void;
   login: (newState: LoginSchema) => void;
   signup: (newState: SignupSchema) => void;
+  logout: () => void;
   // updateLastName: (lastName: State["lastName"]) => void;
 };
 
@@ -48,5 +49,6 @@ export const useSessionStore = create<UserInitialStateProps & Action>(
           user: { ...state.user, ...newState, auth: true },
         };
       }),
+    logout: () => set(() => userInitialState),
   })
 );
